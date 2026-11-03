@@ -1,0 +1,14 @@
+{
+  "type": "moore",
+  "states": ["even", "odd"],
+  "inputAlphabet": ["0", "1"],
+  "outputAlphabet": ["0", "1"],
+  "start": "even",
+  "stateOutputs": { "even": "0", "odd": "1" },
+  "transitions": [
+    { "from": "even", "input": "0", "to": "even" },
+    { "from": "even", "input": "1", "to": "odd" },
+    { "from": "odd", "input": "0", "to": "odd" },
+    { "from": "odd", "input": "1", "to": "even" }
+  ]
+}

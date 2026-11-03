@@ -1,0 +1,16 @@
+{
+  "type": "moore",
+  "states": ["q0", "q1", "q2"],
+  "inputAlphabet": ["0", "1"],
+  "outputAlphabet": ["0", "1", "2"],
+  "start": "q0",
+  "stateOutputs": { "q0": "0", "q1": "1", "q2": "2" },
+  "transitions": [
+    { "from": "q0", "input": "0", "to": "q0" },
+    { "from": "q0", "input": "1", "to": "q1" },
+    { "from": "q1", "input": "0", "to": "q2" },
+    { "from": "q1", "input": "1", "to": "q0" },
+    { "from": "q2", "input": "0", "to": "q1" },
+    { "from": "q2", "input": "1", "to": "q2" }
+  ]
+}

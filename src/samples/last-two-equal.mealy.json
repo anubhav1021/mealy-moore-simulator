@@ -1,0 +1,15 @@
+{
+  "type": "mealy",
+  "states": ["q0", "q1", "q2"],
+  "inputAlphabet": ["a", "b"],
+  "outputAlphabet": ["0", "1"],
+  "start": "q0",
+  "transitions": [
+    { "from": "q0", "input": "a", "to": "q1", "output": "0" },
+    { "from": "q0", "input": "b", "to": "q2", "output": "0" },
+    { "from": "q1", "input": "a", "to": "q1", "output": "1" },
+    { "from": "q1", "input": "b", "to": "q2", "output": "0" },
+    { "from": "q2", "input": "a", "to": "q1", "output": "0" },
+    { "from": "q2", "input": "b", "to": "q2", "output": "1" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "mealy",
+  "states": ["q0", "q1"],
+  "inputAlphabet": ["a", "b"],
+  "outputAlphabet": ["0", "1"],
+  "start": "q0",
+  "transitions": [
+    { "from": "q0", "input": "a", "to": "q1", "output": "0" },
+    { "from": "q0", "input": "b", "to": "q0", "output": "1" },
+    { "from": "q1", "input": "a", "to": "q0", "output": "1" }
+  ]
+}

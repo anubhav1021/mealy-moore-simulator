@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mealy ⇄ Moore Simulator</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Mealy ⇄ Moore Conversion Simulator</h1>
+        <p class="subtitle">CSET302 · Automata Theory and Computability · Problem statement 14</p>
+      </div>
+      <div class="direction" role="group" aria-label="Conversion direction">
+        <button type="button" data-type="mealy">Mealy → Moore</button>
+        <button type="button" data-type="moore">Moore → Mealy</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <!-- 1. The two transition tables -->
+      <section class="panel tables-panel">
+        <div class="panel-head">
+          <h2 id="input-heading">1 · Mealy machine (given)</h2>
+          <button id="edit-btn" type="button">✎ Edit</button>
+        </div>
+        <p id="input-description" class="desc"></p>
+        <div id="input-table"></div>
+        <div id="edit-tools" class="edit-tools" hidden>
+          <button id="add-state" type="button">+ Add state</button>
+          <button id="remove-state" type="button">− Remove last state</button>
+          <button id="reset-machine" type="button">↺ Reset</button>
+        </div>
+        <h2 id="result-heading" class="second">Converted Moore machine</h2>
+        <div id="result-table"></div>
+      </section>
+
+      <!-- 2. Graphs + step player -->
+      <section class="panel graphs-panel">
+        <h2>2 · Conversion, step by step</h2>
+        <div class="graphs">
+          <div class="graph-box">
+            <h3 id="source-title">Given machine</h3>
+            <div id="source-graph" class="graph"></div>
+          </div>
+          <div class="graph-box">
+            <h3 id="result-title">Converted machine</h3>
+            <div id="result-graph" class="graph"></div>
+          </div>
+        </div>
+        <div class="step-player">
+          <div class="mode-bar">
+            <span id="mode-label">Showing: conversion steps</span>
+            <button id="back-to-conversion" type="button" hidden>↩ Back to conversion steps</button>
+          </div>
+          <div class="step-controls">
+            <button id="prev-step" type="button">◀ Prev</button>
+            <span id="step-counter">Step 0 of 0</span>
+            <button id="next-step" type="button">Next ▶</button>
+            <button id="play-step" type="button">▶ Play</button>
+            <button id="last-step" type="button">Show result ⏭</button>
+          </div>
+          <h3 id="step-title"></h3>
+          <p id="step-explanation"></p>
+        </div>
+      </section>
+
+      <!-- 3. Test with an input string -->
+      <section class="panel test-panel">
+        <h2>3 · Test with an input string</h2>
+        <div class="field-row">
+          <label>Input string
+            <input id="test-string" autocomplete="off" />
+          </label>
+          <button id="run-btn" type="button">Run</button>
+          <button id="show-run-btn" type="button" class="accent">▶ Show this run on the graphs</button>
+        </div>
+        <div id="trace-output"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
